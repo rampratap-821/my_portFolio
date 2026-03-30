@@ -90,7 +90,7 @@ const Portfolio = () => {
           <p className="text-orange-500 uppercase tracking-widest text-sm pb-6 font-medium">
             Visit My Portfolio and Keep Your Feedback
           </p>
-          <h2 className="text-5xl font-bold text-gray-800 pb-[70px]">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 pb-[70px]">
             My Portfolio
           </h2>
         </div>

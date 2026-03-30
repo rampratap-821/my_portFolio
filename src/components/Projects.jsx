@@ -131,7 +131,7 @@ const ResumeProjects = () => {
       
       {/* Heading - Same style as Education */}
       <div className="mb-10">
-        <h2 className="text-4xl font-bold text-[#1e2125] text-center py-10">Projects</h2>
+        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e2125] text-center py-10">Projects</h2>
       </div>
       
       <div className="grid md:grid-cols-2 gap-16 items-stretch">

@@ -130,9 +130,9 @@ const Education = () => {
   }, [rightVisible]);
 
   return (
-    <div className="py-5 px-4 md:px-10 overflow-hidden">
+    <div className="py-5 px-5 md:px-10 overflow-hidden">
         <div className="mb-10 ml-4">
-            <h2 className="text-4xl font-bold text-[#1e2125] text-center py-10">Education</h2>
+            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e2125] text-center py-10">Education</h2>
           </div>
       
       <div className=" grid md:grid-cols-2 gap-16 items-stretch">

@@ -67,7 +67,7 @@ const Hobbies = () => {
           <p className="text-orange-500 uppercase tracking-widest text-sm pb-5 font-medium">
             My Interests
           </p>
-          <h2 className="text-5xl font-bold text-gray-800 pb-20">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 pb-20">
             Hobbies & Interests
           </h2>
         </div>

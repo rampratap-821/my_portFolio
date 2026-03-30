@@ -11,7 +11,7 @@ const Resume = () => {
       <div>
         <section className="w-full pt-20 px-6">
           <div className="w-full text-center px-5">
-            <h2 className="text-5xl md:text-6xl font-bold text-[#1e2125] mb-12">
+            <h2 className=" text-3xl sm:text-3xl md:text-4xl lg:text-5xl md:text-6xl font-bold text-[#1e2125] mb-12">
               My Resume
             </h2>
 

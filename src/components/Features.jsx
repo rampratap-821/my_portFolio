@@ -90,7 +90,7 @@ const Features = () => {
           <p className="text-orange-500 tracking-widest  uppercase text-sm mb-2">
             Feature
           </p>
-          <h2 className="text-5xl font-bold text-gray-800 mb-14 ">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-14 ">
             What I Do
           </h2>
         </div>

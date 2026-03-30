@@ -55,7 +55,7 @@ const Contact = () => {
           <p className="text-orange-500 text-xs tracking-[4px] text-center uppercase mb-2">
             Contact
           </p>
-          <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-800">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl md:text-6xl font-bold text-center text-gray-800">
             Contact With Me
           </h2>
         </div>

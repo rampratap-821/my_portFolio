@@ -33,7 +33,7 @@ const Blog = () => {
         </p>
 
         {/* Heading */}
-        <h2 className="text-center text-5xl md:text-5xl font-bold text-gray-800 pb-20">
+        <h2 className="text-center text-3xl sm:text-3xl md:text-4xl lg:text-5xl md:text-5xl font-bold text-gray-800 pb-20">
           My Blog
         </h2>
 

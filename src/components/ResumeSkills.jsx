@@ -79,7 +79,7 @@ const ResumeSkills = () => {
   }, [rightVisible]);
 
   return (
-    <div className=" font-sans overflow-hidden px-10">
+    <div className=" font-sans overflow-hidden px-5">
       
       {/* Heading with fade-in animation */}
       <div
@@ -90,7 +90,7 @@ const ResumeSkills = () => {
           transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1)'
         }}
       >
-        <h2 className="text-4xl font-bold text-[#1e2125] py-10 text-center  ">Skills</h2>
+        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e2125] py-10 text-center  ">Skills</h2>
       </div>
 
       {/* --- SKILLS PROGRESS SECTION --- */}
