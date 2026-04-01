@@ -4,7 +4,7 @@ import DemoButton from './components/DemoButton'
 
 const App = () => {
   return (
-    <div className=' bg-gradient-to-br from-gray-50 via-gray-00 to-gray-50'>
+    <div className='bg-white/10' >
       <AllComponent/>
       <DemoButton/>
     </div>

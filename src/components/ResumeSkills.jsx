@@ -90,7 +90,10 @@ const ResumeSkills = () => {
           transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1)'
         }}
       >
-        <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e2125] py-10 text-center  ">Skills</h2>
+         <div className="py-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-black text-[#1e2125]">Skills</h2>
+         
+        </div>
       </div>
 
       {/* --- SKILLS PROGRESS SECTION --- */}

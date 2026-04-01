@@ -50,8 +50,8 @@ const Features = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = parseInt(entry.target.getAttribute('data-index'), 10);
-            setVisibleItems(prev => {
+            const index = parseInt(entry.target.getAttribute("data-index"), 10);
+            setVisibleItems((prev) => {
               if (!prev.includes(index)) {
                 return [...prev, index];
               }
@@ -60,79 +60,74 @@ const Features = () => {
           }
         });
       },
-      { threshold: 0.2, rootMargin: '50px' }
+      { threshold: 0.2, rootMargin: "50px" }
     );
 
-    const cards = document.querySelectorAll('.feature-card');
-    cards.forEach((card) => {
-      observer.observe(card);
-    });
+    const cards = document.querySelectorAll(".feature-card");
+    cards.forEach((card) => observer.observe(card));
 
     return () => {
-      cards.forEach((card) => {
-        observer.unobserve(card);
-      });
+      cards.forEach((card) => observer.unobserve(card));
     };
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 px-5 overflow-hidden">
-      <div className="">
-        
-        {/* Heading with slide-up animation */}
+    <section ref={sectionRef} className="py-20 md:px-10 px-5 overflow-hidden">
+      <div>
+        {/* Heading */}
         <div
           className="transform transition-all duration-700 ease-out"
           style={{
             opacity: visibleItems.length > 0 ? 1 : 0,
-            transform: visibleItems.length > 0 ? 'translateY(0)' : 'translateY(30px)'
+            transform:
+              visibleItems.length > 0
+                ? "translateY(0)"
+                : "translateY(30px)",
           }}
         >
-          <p className="text-orange-500 tracking-widest  uppercase text-sm mb-2">
+          <p className="text-orange-500 tracking-widest uppercase text-sm mb-2">
             Feature
           </p>
-          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-14 ">
+          <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-14">
             What I Do
           </h2>
         </div>
 
         {/* Grid */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 gap-10 ">
           {features.map((item, index) => (
-            
             <div
               key={index}
               data-index={index}
               className="feature-card group relative p-7 min-h-[300px] rounded-xl overflow-hidden 
-             bg-gradient-to-r from-white to-gray-100 flex justify-center items-center
-                shadow-md hover:shadow-2xl 
-                transition-all duration-500 transform"
+              bg-gradient-to-r from-white to-gray-100 flex justify-center items-center
+              shadow-md hover:shadow-2xl transition-all duration-500 transform"
               style={{
                 opacity: visibleItems.includes(index) ? 1 : 0,
-                transform: visibleItems.includes(index) 
-                  ? 'translateY(0)' 
-                  : 'translateY(50px)',
-                transition: `opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1)`,
-                transitionDelay: `${index * 100}ms`
+                transform: visibleItems.includes(index)
+                  ? "translateY(0)"
+                  : "translateY(50px)",
+                transition:
+                  "opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1)",
+                transitionDelay: `${index * 100}ms`,
               }}
             >
-
-              {/* Glow Effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-orange-500/20 blur-2xl"></div>
+              {/* Glow Effect (enhanced) */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-orange-800 blur-3xl"></div>
 
               {/* Background Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-20 transition duration-500"
                 style={{
-                  backgroundImage: "url('/bg-pattern.png')"
+                  backgroundImage: "url('/bg-pattern.png')",
                 }}
               ></div>
 
-              {/* Orange Overlay */}
-              <div className="absolute inset-0 bg-orange-500 opacity-0 group-hover:opacity-90 transition duration-500"></div>
+              {/* 🔥 Updated Deep Orange Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ff5b20] to-[#ff9100] opacity-0 group-hover:opacity-95 transition duration-500"></div>
 
-              {/* Content - slides in from bottom on hover */}
-              <div className="relative z-10 transform transition-all duration-500 ease-out group-hover:translate-y-[-8px]">
-                
+              {/* Content */}
+              <div className="relative z-10 transform transition-all duration-500 ease-out group-hover:-translate-y-2">
                 {/* Icon */}
                 <div className="text-orange-500 text-3xl mb-6 group-hover:text-white transition duration-300">
                   {item.icon}
@@ -147,13 +142,10 @@ const Features = () => {
                 <p className="text-gray-600 text-base leading-relaxed group-hover:text-white transition duration-300">
                   {item.desc}
                 </p>
-
               </div>
             </div>
-
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -7,57 +7,55 @@ const Education = () => {
   const leftSectionRef = useRef(null);
   const rightSectionRef = useRef(null);
 
-  const TimelineCard = ({ title, subtitle, desc, score, isTall, index, side }) => {
+  const TimelineCard = ({ title, subtitle, desc, score, index, side, isTall }) => {
     return (
       <div 
-        className={`relative pl-12 group ${isTall ? "h-full" : ""}`}
+        // yahan h-full add kiya taaki height parent se inherit ho sake
+        className={`relative pl-12 ${isTall ? "h-full" : ""} ${cardsVisible.includes(index) ? "opacity-100 translate-x-0" : "opacity-0 " + (side === 'left' ? "-translate-x-[50px]" : "translate-x-[50px]")}`}
         style={{
-          opacity: cardsVisible.includes(index) ? 1 : 0,
-          transform: cardsVisible.includes(index) 
-            ? 'translateX(0)' 
-            : side === 'left' ? 'translateX(-50px)' : 'translateX(50px)',
-          transition: `opacity 600ms cubic-bezier(0.4, 0, 0.2, 1), transform 600ms cubic-bezier(0.4, 0, 0.2, 1)`,
-          transitionDelay: `${index * 150}ms`
+          transition: `all 600ms cubic-bezier(0.4, 0, 0.2, 1) ${index * 150}ms`
         }}
       >
-        
-        {/* Vertical Line */}
-        <div className="absolute left-[7px] top-0 h-full w-[5px] bg-[#dce1e4]"></div>
+        <div className="absolute left-[7px] top-0 h-full w-[5px] bg-[#dce1e4] pointer-events-none"></div>
 
-        {/* Dot */}
-        <div className="absolute left-0 top-10 w-5 h-5 rounded-full border-[3px] border-[#dce1e4] bg-[#f4f4f4] z-10 transition-all duration-300 group-hover:bg-[#ff4522] group-hover:border-[#ff4522]"></div>
-
-        {/* Horizontal Line */}
-        <div className="absolute left-[15px] top-[47px] w-6 h-[5px] bg-[#dce1e4] group-hover:bg-[#ff4522] transition-colors duration-300"></div>
-
-        {/* Card - Increased padding and size */}
-        <div
-          className={`bg-[#f0f2f5] p-10 rounded-xl shadow-md transition-all duration-500 cursor-pointer 
-          hover:bg-orange-500 hover:text-white transform hover:-translate-y-2 relative mb-10
-          ${isTall ? "h-[calc(100%-40px)] flex flex-col justify-center" : ""}`}
-        >
+        {/* MAIN INTERACTION GROUP: added h-full if isTall */}
+        <div className={`group relative ${isTall ? "h-full" : ""}`}>
           
-          {/* Score - Slightly larger */}
-          <span className="absolute top-6 right-6 text-[12px] font-bold bg-white text-[#ff4522] px-4 py-1.5 rounded shadow-sm">
-            {score}
-          </span>
+          <div className="absolute -left-12 top-10 z-30 cursor-pointer">
+            <div className="w-5 h-5 rounded-full border-[3px] border-[#dce1e4] bg-[#f4f4f4] transition-all duration-300 
+              group-hover:bg-[#ff5b20] group-hover:border-[#ff5b20] shadow-sm scale-100 group-hover:scale-110">
+            </div>
+            <div className="absolute left-[15px] top-[7px] w-6 h-[5px] bg-[#dce1e4] transition-colors duration-300 
+              group-hover:bg-[#ff5b20]">
+            </div>
+          </div>
 
-          {/* Title - Larger text */}
-          <h3 className="text-2xl font-bold mb-2 text-[#1e2125] group-hover:text-white">
-            {title}
-          </h3>
+          <div
+            // Yahan mb-10 ko tall cards ke liye remove kiya hai taaki alignment perfect rahe
+            className={`relative p-10 rounded-xl shadow-md transition-all duration-500 transform cursor-pointer
+            bg-gradient-to-r from-white to-gray-100 
+            group-hover:bg-gradient-to-br group-hover:from-[#ff5b20] group-hover:to-[#ff9100] 
+            group-hover:text-white group-hover:-translate-y-2
+            ${isTall ? "h-full flex flex-col justify-center" : "mb-10"}`}
+          >
+            <span className="absolute top-2 right-6 text-[12px] font-bold bg-white text-[#ff4522] px-4 py-1.5 rounded shadow-sm">
+              {score}
+            </span>
 
-          {/* Subtitle - Larger text */}
-          <p className="text-sm font-medium text-gray-500 mb-6 group-hover:text-white/80">
-            {subtitle}
-          </p>
+            <h3 className="text-2xl font-bold mb-2 transition-colors text-[#1e2125] group-hover:text-white">
+              {title}
+            </h3>
 
-          <div className="w-full h-[1px] bg-gray-300 mb-6 group-hover:bg-white/20"></div>
+            <p className="text-sm font-medium mb-6 transition-colors text-gray-500 group-hover:text-white/90">
+              {subtitle}
+            </p>
 
-          {/* Description - Larger text */}
-          <p className="text-base leading-relaxed text-gray-600 group-hover:text-white">
-            {desc}
-          </p>
+            <div className="w-full h-[1px] bg-gray-300 mb-6 transition-colors group-hover:bg-white/30"></div>
+
+            <p className="text-base leading-relaxed transition-colors text-gray-600 group-hover:text-white font-medium">
+              {desc}
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -66,134 +64,78 @@ const Education = () => {
   useEffect(() => {
     const leftObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setLeftVisible(true);
-          }
-        });
+        entries.forEach((entry) => { if (entry.isIntersecting) setLeftVisible(true); });
       },
-      { threshold: 0.2, rootMargin: '50px' }
+      { threshold: 0.2 }
     );
 
     const rightObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setRightVisible(true);
-          }
-        });
+        entries.forEach((entry) => { if (entry.isIntersecting) setRightVisible(true); });
       },
-      { threshold: 0.2, rootMargin: '50px' }
+      { threshold: 0.2 }
     );
 
-    if (leftSectionRef.current) {
-      leftObserver.observe(leftSectionRef.current);
-    }
-    if (rightSectionRef.current) {
-      rightObserver.observe(rightSectionRef.current);
-    }
+    if (leftSectionRef.current) leftObserver.observe(leftSectionRef.current);
+    if (rightSectionRef.current) rightObserver.observe(rightSectionRef.current);
 
     return () => {
-      if (leftSectionRef.current) {
-        leftObserver.unobserve(leftSectionRef.current);
-      }
-      if (rightSectionRef.current) {
-        rightObserver.unobserve(rightSectionRef.current);
-      }
+      if (leftSectionRef.current) leftObserver.disconnect();
+      if (rightSectionRef.current) rightObserver.disconnect();
     };
   }, []);
 
   useEffect(() => {
     if (leftVisible) {
-      setTimeout(() => {
-        setCardsVisible(prev => {
-          const newVisible = [...prev];
-          if (!newVisible.includes(0)) newVisible.push(0);
-          if (!newVisible.includes(1)) newVisible.push(1);
-          return newVisible;
-        });
-      }, 100);
+      setTimeout(() => { setCardsVisible(prev => [...new Set([...prev, 0, 1])]); }, 100);
     }
   }, [leftVisible]);
 
   useEffect(() => {
     if (rightVisible) {
-      setTimeout(() => {
-        setCardsVisible(prev => {
-          if (!prev.includes(2)) {
-            return [...prev, 2];
-          }
-          return prev;
-        });
-      }, 100);
+      setTimeout(() => { setCardsVisible(prev => [...new Set([...prev, 2])]); }, 100);
     }
   }, [rightVisible]);
 
   return (
-    <div className="py-5 px-5 md:px-10 overflow-hidden">
-        <div className="mb-10 ml-4">
-            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e2125] text-center py-10">Education</h2>
+    <div className="py-20 px-8 md:px-10 bg-white min-h-screen overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2 className="text-2xl md:text-4xl font-black text-[#1e2125]">Education</h2>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-12 items-stretch">
+          <div ref={leftSectionRef} className="flex flex-col h-full">
+            <TimelineCard 
+              index={0} 
+              side="left" 
+              title="High School (10th)" 
+              subtitle="A.H.M Inter College, Ratanpur Kalan (2020)" 
+              score="Passed" 
+              desc="Completed my High School (10th) from A.H.M Inter College, Ratanpur Kalan during the academic session 2020. Built a strong foundation in core subjects along with discipline, dedication, and effective learning skills." 
+            />
+            <TimelineCard 
+              index={1} 
+              side="left" 
+              title="Intermediate (12th)" 
+              subtitle="Government Inter College, Pakbada, Moradabad (2022)" 
+              score="Passed" 
+              desc="Completed my Intermediate (12th) education from Government Inter College, Pakbada in 2022. Focused on academic growth while strengthening analytical thinking and problem-solving abilities." 
+            />
           </div>
-      
-      <div className=" grid md:grid-cols-2 gap-16 items-stretch">
-        
-        {/* Schooling - Slide from left */}
-        <div 
-          ref={leftSectionRef}
-          className="flex flex-col transform transition-all duration-800 ease-out"
-          style={{
-            opacity: leftVisible ? 1 : 0,
-            transform: leftVisible ? 'translateX(0)' : 'translateX(-80px)',
-            transition: 'opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1)'
-          }}
-        >
-        
 
-          {/* 10th */}
-          <TimelineCard
-            index={0}
-            side="left"
-            title="High School (10th)"
-            subtitle="A.H.M Inter College, Ratanpur Kalan ( 2020)"
-            score="Passed"
-            desc="Completed my High School (10th) from A.H.M Inter College, Ratanpur Kalan during the academic session 2019–2020. Built a strong foundation in core subjects along with discipline, dedication, and effective learning skills that contributed to my academic and personal growth."
-          />
-
-          {/* 12th */}
-          <TimelineCard
-            index={1}
-            side="left"
-            title="Intermediate (12th)"
-            subtitle="Government Inter College, Pakbada, Moradabad (2022)"
-            score="Passed"
-            desc="Completed my Intermediate (12th) education from Government Inter College, Pakbada, District Moradabad in 2022. Focused on academic growth while strengthening analytical thinking, problem-solving abilities, and subject knowledge, which prepared me for higher education."
-          />
+          <div ref={rightSectionRef} className="flex flex-col h-full">
+            <TimelineCard 
+              index={2} 
+              side="right" 
+              isTall={true} 
+              title="BCA (Bachelor of Computer Applications)" 
+              subtitle="Radha Govind Institute, Moradabad (2023 - 2025)" 
+              score="Completed" 
+              desc="Completed Bachelor of Computer Applications (BCA) from Radha Govind Institute (2022–2025). Developed strong expertise in web development, programming, and database management. Built multiple real-world projects using modern technologies, strengthening problem-solving skills and preparing for a professional career in software development." 
+            />
+          </div>
         </div>
-
-        {/* Degree - Slide from right */}
-        <div 
-          ref={rightSectionRef}
-          className="flex flex-col h-full transform transition-all duration-800 ease-out"
-          style={{
-            opacity: rightVisible ? 1 : 0,
-            transform: rightVisible ? 'translateX(0)' : 'translateX(80px)',
-            transition: 'opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), transform 800ms cubic-bezier(0.4, 0, 0.2, 1)'
-          }}
-        >
-       
-
-          {/* BCA */}
-          <TimelineCard
-            index={2}
-            side="right"
-            isTall={true}
-            title="BCA (Bachelor of Computer Applications)"
-            subtitle="Radha Govind Institute, Moradabad (2023 - 2025)"
-            score="Completed"
-            desc="Completed Bachelor of Computer Applications (BCA) from Radha Govind Institute, Moradabad (2022–2025). Developed strong expertise in web development, programming, and database management. Built multiple real-world projects using modern technologies, strengthening problem-solving skills and preparing for a professional career in software development."
-          />
-        </div>
-
       </div>
     </div>
   );

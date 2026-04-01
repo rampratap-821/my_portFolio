@@ -60,12 +60,12 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12">
+       <div className="flex flex-col md:flex-row gap-6 md:gap-10">
 
           {/* LEFT CARD */}
           <div
             ref={leftCardRef}
-            className="transform transition-all duration-800 ease-out"
+            className="transform transition-all duration-800 ease-out w-full md:w-[70%]"
             style={{
               opacity: leftVisible ? 1 : 0,
               transform: leftVisible ? 'translateX(0)' : 'translateX(-80px)',
@@ -82,18 +82,18 @@ const Contact = () => {
                 />
               </div>
 
-              <h3 className="text-2xl font-semibold text-gray-800 mb-1">
+              <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-1">
                 Rampratap
               </h3>
-              <p className="text-sm text-orange-500 mb-4">
+              <p className="text-md text-orange-500 mb-4">
                 Software Engineer
               </p>
 
-              <p className="text-sm text-gray-600 mb-5 leading-relaxed">
+              <p className="text-md text-gray-600  leading-relaxed">
                 I am open to work. Connect with me via phone or email.
               </p>
 
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className=" text-md text-gray-700">
                 <p>
                   <span className="font-semibold">Phone:</span>{" "}
                   <span className="hover:text-orange-500 cursor-pointer transition">
@@ -113,7 +113,7 @@ const Contact = () => {
           {/* RIGHT FORM */}
           <div
             ref={rightFormRef}
-            className="md:col-span-2 transform transition-all duration-800 ease-out"
+            className="w-[100%] transform transition-all duration-800 ease-out"
             style={{
               opacity: rightVisible ? 1 : 0,
               transform: rightVisible ? 'translateX(0)' : 'translateX(80px)',
@@ -126,23 +126,23 @@ const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                      <FaUser className="text-gray-500 text-[15px]" />
-                      <span className="text-gray-500 text-[15px]">Your Name</span>
+                    
+                      <span className="text-gray-700 text-[15px]">Your Name</span>
                     </label>
                     <input
                       type="text"
-                      placeholder="Enter your name"
+                    
                       className="w-full p-4 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
                   <div>
                     <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                      <FaPhone className="text-gray-500 text-[15px]" />
-                      <span className="text-gray-500 text-[15px]">Phone Number</span>
+                  
+                      <span className="text-gray-700 text-[15px]">Phone Number</span>
                     </label>
                     <input
                       type="text"
-                      placeholder="Enter your phone number"
+                    
                       className="w-full p-4 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400"
                     />
                   </div>
@@ -150,36 +150,35 @@ const Contact = () => {
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                    <FaEnvelope className="text-gray-500 text-[15px]" />
-                    <span className="text-gray-500 text-[15px]">Email</span>
+                  
+                    <span className="text-gray-700 text-[15px]">Email</span>
                   </label>
                   <input
                     type="email"
-                    placeholder="Enter your email"
+                 
                     className="w-full p-4 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400"
                   />
                 </div>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                    <FaTag className="text-gray-500 text-[15px]" />
-                    <span className="text-gray-500 text-[15px]">Subject</span>
+               
+                    <span className="text-gray-700 text-[15px]">Subject</span>
                   </label>
                   <input
                     type="text"
-                    placeholder="Enter subject"
                     className="w-full p-4 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400"
                   />
                 </div>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-                    <FaComment className="text-gray-500 text-[15px]" />
-                    <span className="text-gray-500 text-[15px]">Your Message</span>
+               
+                    <span className="text-gray-700 text-[15px]">Your Message</span>
                   </label>
                   <textarea
                     rows="6"
-                    placeholder="Write your message here..."
+                  
                     className="w-full p-4 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none"
                   ></textarea>
                 </div>

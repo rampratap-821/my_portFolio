@@ -10,6 +10,7 @@ import { TbBrandJavascript } from "react-icons/tb";
 import profile from "../assets/image.png";
 import { RiReactjsLine } from "react-icons/ri";
 
+
 const Hero = () => {
   // Typing animation states
   const [displayText, setDisplayText] = useState("");
@@ -21,9 +22,9 @@ const Hero = () => {
   const [leftContentVisible, setLeftContentVisible] = useState(false);
   const [rightContentVisible, setRightContentVisible] = useState(false);
 
-  const phrases = ["Web Developer","Ui Devloper"];
-  const typingSpeed = 150;
-  const deletingSpeed = 100;
+  const phrases = ["Web Developer", "Frontent developer"];
+  const typingSpeed = 20;
+  const deletingSpeed = 20;
   const pauseBetweenPhrases = 1500;
 
   useEffect(() => {
@@ -76,37 +77,40 @@ const Hero = () => {
   };
 
   return (
-    <section className="w-full py-7 md:py-10 lg:py-10 overflow-hidden border ">
+    <section className="w-full py-7 md:py-10 lg:py-10 overflow-hidden border-b border-gray-200 ">
 
       <div className="px-5 sm:px-6 md:px-8 lg:px-10 grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 items-center lg:items-stretch h-full">
 
         {/* LEFT CONTENT - Slide from left */}
         <div
-          className={`lg:col-span-2  order-1 lg:order-1  transition-all duration-1000 ease-out transform ${leftContentVisible
-              ? 'translate-x-0 opacity-100'
-              : '-translate-x-full opacity-0'
+          className={`md:w-[93%] lg:col-span-2  order-1 lg:order-1  transition-all duration-1000 ease-out transform ${leftContentVisible
+            ? 'translate-x-0 opacity-100'
+            : '-translate-x-full opacity-0'
             }`}
         >
-          <p className="text-[16px] sm:text-[17px] md:text-[18px] tracking-[2px] sm:tracking-[3px] text-gray-500 font-medium mb-4 md:mb-5 uppercase sm:text-center   md:text-left  lg:text-left">
+          <p className="text-[12px] sm:text-[12px] md:text-[15px] tracking-[2px] sm:tracking-[3px] text-gray-900 font-medium mb-4 md:mb-5 uppercase sm:text-center   md:text-left  lg:text-left">
             WELCOME TO MY WORLD
           </p>
 
-          <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold  text-[#1e2125] sm:text-center   md:text-left  lg:text-left">
-            Hi,<br />
+          <div className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold  text-[#1e2125] sm:text-center   md:text-left  lg:text-left">
+            <h1> Hi,</h1>
             I'm <span className="text-[#ff4522] sm:text-center   md:text-left  lg:text-left">Rampratap</span>
-            <br />
-            a <span className="text-[#ff4522] break-words sm:text-center   md:text-left  lg:text-left">{displayText}</span>
 
-            {/* Thin Cursor Line */}
-            <span className="inline-block w-[3px] h-[1em] bg-black ml-1 animate-pulse sm:text-center   md:text-left  lg:text-left"></span>
-          </h1>
+            <div className="flex md:pt-2  pt-2 sm:justify-center md:justify-start ">
+              <span>a</span>
+              <h1 className=" pl-2 text-[#ff4522] break-words sm:text-center   md:text-left  lg:text-left"> {displayText}</h1>
 
-          <h1 className="  text-gray-600 mt-5 sm:mt-6 md:mt-7   text-[15px] sm:text-[16px] md:text-[17px]">
-       Programming is my passion, and I genuinely enjoy creating
-        meaningful and efficient  solutions in through
-          code. I enjoy collaborating with teams and 
-          contributing to group success. I stay focused, motivated, and committed to delivering quality 
-          work on time. Overall, I am passionate, dedicated, and always eager to grow as a developer. 
+              {/* Thin Cursor Line */}
+              <h1 className="inline-block w-[3px] h-[1em] bg-black ml-1 animate-pulse sm:text-center   md:text-left  lg:text-left"></h1>
+            </div>
+          </div>
+
+          <h1 className="  text-gray-400 mt-5 sm:mt-6 md:mt-7   text-[15px] sm:text-[16px] md:text-[17px]">
+            Programming is my passion, and I genuinely enjoy creating
+            meaningful and efficient  solutions in through
+            code. I enjoy collaborating with teams and
+            contributing to group success. I stay focused, motivated, and committed to delivering quality
+            work on time. Overall, I am passionate, dedicated, and always eager to grow as a developer.
           </h1>
 
           <div className="flex flex-wrap gap-8 sm:gap-10 md:gap-12 mt-8 sm:mt-10 md:mt-12  pt-[40px] sm:pt-[50px] md:pt-[60px] sm:justify-center md:justify-start lg:justify-start  ">
@@ -132,10 +136,10 @@ const Hero = () => {
               <p className="text-[13px] sm:text-[14px] md:text-[15px] font-bold text-gray-800 mb-3 sm:mb-4 md:mb-5 uppercase tracking-wider sm:tracking-widest">
                 BEST SKILL ON
               </p>
-              <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
+              <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start ">
                 <SkillBox color={"blue"}><FaCss3Alt /></SkillBox>
                 <SkillBox color={"orange"}><TbBrandJavascript /></SkillBox>
-                <SkillBox color={"skyblue"}><RiReactjsLine/></SkillBox>
+                <SkillBox color={"skyblue"}><img src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon.png" className="size-6" /></SkillBox>
               </div>
             </div>
 
@@ -143,18 +147,18 @@ const Hero = () => {
         </div>
 
         {/* RIGHT IMAGE - Slide from right */}
-        <div className="order-2 lg:order-2  h-full w-full flex-shrink-0">
+        <div className="order-2 lg:order-2  h-full w-full flex-shrink-0 md:pr-10">
           <div
             className={`   transition-all duration-1000 ease-out transform ${rightContentVisible
-                ? 'translate-x-0 opacity-100'
-                : 'translate-x-full opacity-0'
+              ? 'translate-x-0 opacity-100'
+              : 'translate-x-full opacity-0'
               }`}
           >
             <img
               src={profile}
               alt="Rampratap"
               className=" rounded-2xl transition-transform duration-500 hover:scale-[1.01] object-cover"
-             
+
             />
           </div>
         </div>
@@ -169,7 +173,7 @@ const SocialBox = ({ children, onClick }) => (
   <div
     onClick={onClick}
     className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center 
-bg-[#f0f2f5] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff]
+  bg-gradient-to-r from-white to-gray-100
     shadow-[5px_5px_15px_#d1d1d1] 
     transition-all duration-300 cursor-pointer 
     hover:bg-gradient-to-r hover:from-orange-400 hover:to-orange-600 
@@ -183,7 +187,7 @@ bg-[#f0f2f5] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff]
 const SkillBox = ({ children, color }) => (
   <div
     className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-lg flex items-center justify-center 
-   bg-[#f0f2f5] shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] shadow-[5px_5px_15px_#d1d1d1] transition-all duration-300 cursor-default
+     bg-gradient-to-r from-white to-gray-100 shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] shadow-[5px_5px_15px_#d1d1d1] transition-all duration-300 cursor-default
     hover:-translate-y-1 text-sm sm:text-base md:text-xl"
     style={{ color: color }}
   >

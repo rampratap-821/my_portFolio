@@ -16,7 +16,7 @@ const Resume = () => {
             </h2>
 
             {/* Tabs */}
-            <div className="container mx-auto w-full bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 rounded-xl shadow-[6px_6px_12px_#d1d1d1,-6px_-6px_12px_#ffffff] flex flex-wrap md:flex-nowrap p-1">
+            <div className="container mx-auto w-full bg-gradient-to-tr from-gray-100 to-white rounded-xl shadow-[6px_6px_12px_#d1d1d1,-6px_-6px_12px_#ffffff] flex flex-wrap md:flex-nowrap p-1">
               
               {["Education", "Skills", "Project"].map((tab) => (
                 <button
@@ -24,7 +24,7 @@ const Resume = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`flex-1 py-5 text-sm font-bold transition-all duration-300 rounded-lg
                     ${activeTab === tab 
-                      ? "bg-gradient-to-br from-gray-300 via-gray-200 to-gray-100 shadow-md" 
+                      ? "bg-gradient-to-tr from-gray-100 to-white shadow-md" 
                       : "text-gray-600 hover:text-[#ff4522] opacity-80"}`}
                 >
                   {tab}

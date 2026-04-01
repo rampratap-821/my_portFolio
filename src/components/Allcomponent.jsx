@@ -103,7 +103,16 @@ const AllComponent = () => {
         {/* --- MOBILE/TABLET SIDEBAR (Fix: Added 'lg:hidden' to strictly restrict it) --- */}
         <div className={`fixed top-0 right-0 h-full w-[300px] bg-white shadow-2xl transform ${open ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 z-[110] lg:hidden`}>
           <div className="flex justify-between items-center p-6 border-b">
-            <span className="font-bold text-orange-500">NAVIGATION</span>
+           <div className="flex items-center gap-2 cursor-pointer flex-shrink-0" onClick={() => scrollToSection(heroRef)}>
+            <img
+              src="https://scontent.fbek1-5.fna.fbcdn.net/v/t39.30808-6/467468453_122127745556427436_9180433924243760972_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=53a332&_nc_ohc=Z-0-O2_TnUsQ7kNvwGT5L9f&_nc_oc=AdrH1Lvhi51K2gLJ0N6JV0RB_Abuc07BSzJ4KhP8pQ-hM5DFPFaSjVTJ-KqZP1LoKyrtMj9ApPxl_GzSuBmg_iWc&_nc_zt=23&_nc_ht=scontent.fbek1-5.fna&_nc_gid=_3cjrojI3pk6HcfSsNMtYQ&_nc_ss=7a32e&oh=00_AfxgYr6TnvVFqVtOHTq1zhagOwaCe24Vuh_0Lhhlzkm8QQ&oe=69CB9DFB"
+              alt="logo"
+              className="w-8 h-8 rounded-full object-cover"
+            />
+            <h1 className="font-semibold text-lg">
+              RamPortfolio<span className="text-gray-500">.info</span>
+            </h1>
+          </div>
             <FaTimes className="text-2xl cursor-pointer" onClick={() => setOpen(false)} />
           </div>
           <ul className="flex flex-col gap-6 p-8 text-sm font-bold text-gray-700">
@@ -136,92 +145,114 @@ const AllComponent = () => {
 
       {/* --- FOOTER (UNCHANGED) --- */}
       <footer ref={footerRef} className="pt-16 pb-6 px-6 border overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div 
-              className="transform transition-all duration-700 ease-out"
-              style={{
-                opacity: footerVisible ? 1 : 0,
-                transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
-                transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1)',
-                transitionDelay: '0ms'
-              }}
-            >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">About Me</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Professional developer specializing in creating exceptional digital
-                experiences. Available for freelance opportunities.
-              </p>
-            </div>
+  <div className="max-w-7xl mx-auto">
+    <div className="grid md:grid-cols-4 gap-12 mb-12">
 
-            <div 
-              className="transform transition-all duration-700 ease-out"
-              style={{
-                opacity: footerVisible ? 1 : 0,
-                transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
-                transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1)',
-                transitionDelay: '100ms'
-              }}
-            >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Links</h3>
-              <ul className="space-y-2 text-sm text-gray-500">
-                <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(portfolioRef)}>Portfolio</li>
-                <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(resumeRef)}>Resume</li>
-                <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(featuresRef)}>Features</li>
-                <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(contactRef)}>Contact</li>
-              </ul>
-            </div>
+      <div
+        className="transform transition-all duration-700 ease-out"
+        style={{
+          opacity: footerVisible ? 1 : 0,
+          transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
+          transitionDelay: '0ms'
+        }}
+      >
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">About Me</h3>
+        <p className="text-base text-gray-500 leading-relaxed">
+          Professional developer specializing in creating exceptional digital
+          experiences. Available for freelance opportunities.
+        </p>
+      </div>
 
-            <div 
-              className="transform transition-all duration-700 ease-out"
-              style={{
-                opacity: footerVisible ? 1 : 0,
-                transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
-                transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1)',
-                transitionDelay: '200ms'
-              }}
-            >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Contact Info</h3>
-              <p className="text-sm text-gray-500 mb-2">+91 9520791411</p>
-              <p className="text-sm text-gray-500 mb-2">rampratap8218253@gmail.com</p>
-              <p className="text-sm text-gray-500 leading-relaxed">Pakbada Dehli Road<br />Moradabad</p>
-            </div>
+      <div
+        className="transform transition-all duration-700 ease-out"
+        style={{
+          opacity: footerVisible ? 1 : 0,
+          transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
+          transitionDelay: '100ms'
+        }}
+      >
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Quick Links</h3>
+        <ul className="space-y-2 text-base text-gray-500">
+          <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(portfolioRef)}>Portfolio</li>
+          <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(resumeRef)}>Resume</li>
+          <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(featuresRef)}>Features</li>
+          <li className="hover:text-orange-500 cursor-pointer transition" onClick={() => scrollToSection(contactRef)}>Contact</li>
+        </ul>
+      </div>
 
-            <div 
-              className="transform transition-all duration-700 ease-out"
-              style={{
-                opacity: footerVisible ? 1 : 0,
-                transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
-                transition: 'opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), transform 700ms cubic-bezier(0.4, 0, 0.2, 1)',
-                transitionDelay: '300ms'
-              }}
-            >
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">Newsletter</h3>
-              <input type="email" placeholder="Your email" className="w-full p-2 rounded-md focus:outline-none mb-3" />
-              <button className="w-full bg-gradient-to-r from-gray-200 to-gray-50 text-orange-500 py-2.5 rounded-md text-sm font-medium shadow-sm hover:shadow-md transition hover:bg-orange-500 hover:text-white">Subscribe</button>
-            </div>
-          </div>
+      <div
+        className="transform transition-all duration-700 ease-out"
+        style={{
+          opacity: footerVisible ? 1 : 0,
+          transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
+          transitionDelay: '200ms'
+        }}
+      >
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Contact Info</h3>
+        <p className="text-base text-gray-500 mb-2">+91 9520791411</p>
+        <p className="text-base text-gray-500 mb-2">rampratap8218253@gmail.com</p>
+        <p className="text-base text-gray-500 leading-relaxed">
+          Pakbada Dehli Road<br />Moradabad
+        </p>
+      </div>
 
-          <div className="transform transition-all duration-700 ease-out" style={{ opacity: footerVisible ? 1 : 0, transform: footerVisible ? 'translateY(0)' : 'translateY(30px)', transitionDelay: '400ms' }}>
-            <div className="border-t border-gray-300 mb-6"></div>
-          </div>
+      <div
+        className="transform transition-all duration-700 ease-out"
+        style={{
+          opacity: footerVisible ? 1 : 0,
+          transform: footerVisible ? 'translateY(0)' : 'translateY(50px)',
+          transitionDelay: '300ms'
+        }}
+      >
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">Newsletter</h3>
+        <input
+          type="email"
+          placeholder="Your email"
+          className="w-full p-3 text-base rounded-md focus:outline-none mb-3 bg-gray-50"
+        />
+        <button className="w-full bg-gray-100 text-orange-500 py-3 rounded-md text-base font-medium shadow-sm hover:shadow-md transition hover:bg-orange-500 hover:text-white">
+          Subscribe
+        </button>
+      </div>
+    </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center transform transition-all duration-700 ease-out" style={{ opacity: footerVisible ? 1 : 0, transform: footerVisible ? 'translateY(0)' : 'translateY(30px)', transitionDelay: '500ms' }}>
-            <p className="text-sm text-gray-500 mb-4 md:mb-0">© 2026 All rights reserved.</p>
-            <div className="flex gap-4">
-              <div onClick={() => window.open("https://www.facebook.com/ram.pratap.495594", "_blank")} className="bg-white p-3 rounded-md shadow-sm hover:bg-orange-500 hover:text-white group cursor-pointer transition">
-                <FaFacebookF size={14} className="text-gray-600 group-hover:text-white transition" />
-              </div>
-              <div onClick={() => window.open("https://www.instagram.com/ramp.ratap8218/", "_blank")} className="bg-white p-3 rounded-md shadow-sm hover:bg-orange-500 hover:text-white group cursor-pointer transition">
-                <FaInstagram size={14} className="text-gray-600 group-hover:text-white transition" />
-              </div>
-              <div onClick={() => window.open("https://www.linkedin.com/in/ram-pratap-477346320/", "_blank")} className="bg-white p-3 rounded-md shadow-sm hover:bg-orange-500 hover:text-white group cursor-pointer transition">
-                <FaLinkedinIn size={14} className="text-gray-600 group-hover:text-white transition" />
-              </div>
-            </div>
-          </div>
+    <div
+      className="transform transition-all duration-700 ease-out"
+      style={{
+        opacity: footerVisible ? 1 : 0,
+        transform: footerVisible ? 'translateY(0)' : 'translateY(30px)',
+        transitionDelay: '400ms'
+      }}
+    >
+      <div className="border-t border-gray-300 mb-6"></div>
+    </div>
+
+    <div
+      className="flex flex-col md:flex-row justify-between items-center transform transition-all duration-700 ease-out"
+      style={{
+        opacity: footerVisible ? 1 : 0,
+        transform: footerVisible ? 'translateY(0)' : 'translateY(30px)',
+        transitionDelay: '500ms'
+      }}
+    >
+      <p className="text-base text-gray-500 mb-4 md:mb-0">
+        © 2026 All rights reserved.
+      </p>
+
+      <div className="flex gap-4">
+        <div onClick={() => window.open("https://www.facebook.com/ram.pratap.495594", "_blank")} className="bg-gray-300 text-black p-3 rounded-md shadow-sm hover:bg-orange-500 hover:text-white group cursor-pointer transition">
+          <FaFacebookF size={16} className="text-gray-600 group-hover:text-white transition" />
         </div>
-      </footer>
+        <div onClick={() => window.open("https://www.instagram.com/ramp.ratap8218/", "_blank")} className="bg-gray-300 p-3 rounded-md shadow-sm hover:bg-orange-500 hover:text-white group cursor-pointer transition">
+          <FaInstagram size={16} className="text-gray-600 group-hover:text-white transition" />
+        </div>
+        <div onClick={() => window.open("https://www.linkedin.com/in/ram-pratap-477346320/", "_blank")} className="bg-gray-300  text-black p-3 rounded-md shadow-sm hover:bg-orange-500 hover:text-white group cursor-pointer transition">
+          <FaLinkedinIn size={16} className="text-gray-600 group-hover:text-white transition" />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
     </>
   );
 }
