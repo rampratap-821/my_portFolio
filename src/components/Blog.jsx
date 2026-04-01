@@ -15,10 +15,10 @@ const blogs = [
     title: "Creating Modern UI with React.js using Component-Based Design",
   },
   {
-    img: "https://images.unsplash.com/photo-1758612898312-708f2ffdcd53?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTV8fG9ubGluZSUyMGNvdXJzZXN8ZW58MHx8MHx8fDA%3D",
+    img: "https://images.unsplash.com/photo-1758876020491-9560594ec362?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fG9ubGluZSUyMGNvdXJzZXN8ZW58MHx8MHx8fDA%3D",
     category: "PROJECT",
     time: "4 min read",
-    title: "Developing Eduma Online Courses Platform with React & Tailwind",
+    title: "Developing  Online Courses Platform with React & Tailwind",
   },
 ];
 

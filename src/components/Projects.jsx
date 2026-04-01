@@ -38,7 +38,7 @@ const ResumeProjects = () => {
             group-hover:bg-gradient-to-br group-hover:from-[#ff5b20] group-hover:to-[#ff9100] 
             group-hover:text-white group-hover:-translate-y-2"
           >
-            <span className="absolute top-6 right-6 text-[12px] font-bold bg-white text-[#ff4522] px-4 py-1.5 rounded shadow-sm">
+            <span className="absolute top-2 right-6 text-[12px] font-bold bg-white text-[#ff4522] px-4 py-1.5 rounded shadow-sm">
               {score}
             </span>
 
@@ -98,7 +98,7 @@ const ResumeProjects = () => {
   }, [rightVisible]);
 
   return (
-    <div className="py-10 px-4 md:px-10 bg-white overflow-hidden">
+    <div className="py-10 px-7 md:px-10 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 text-center">
           <h2 className="text-2xl md:text-4xl font-black text-[#1e2125] py-10">

@@ -105,7 +105,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <h1 className="  text-gray-400 mt-5 sm:mt-6 md:mt-7   text-[15px] sm:text-[16px] md:text-[17px]">
+          <h1 className="  text-gray-500 mt-5 sm:mt-6 md:mt-7   text-[15px] sm:text-[16px] md:text-[17px]">
             Programming is my passion, and I genuinely enjoy creating
             meaningful and efficient  solutions in through
             code. I enjoy collaborating with teams and
