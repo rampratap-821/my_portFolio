@@ -20,7 +20,7 @@
 
 //         {/* 2. MAIN INTERACTION GROUP: Iske andar Dot aur Card dono hain */}
 //         <div className="group relative mb-10">
-          
+
 //           {/* DOT & CONNECTOR: Ab ye group ka hissa hai */}
 //           <div className="absolute -left-12 top-10 z-30 cursor-pointer">
 //             <div className="w-5 h-5 rounded-full border-[3px] border-[#dce1e4] bg-[#f4f4f4] transition-all duration-300 
@@ -105,7 +105,7 @@
 //             My <span className="text-[#ff4522]">Projects</span>
 //           </h2>
 //         </div>
-        
+
 //         <div className="grid md:grid-cols-2 gap-16 items-stretch">
 //           <div ref={leftSectionRef} className="flex flex-col">
 //             <TimelineCard index={0} side="left" title="Portfolio Website" subtitle="Personal Project" score="Project" desc="Designed and developed a fully responsive personal portfolio website using React.js and Tailwind CSS. Showcases my skills, projects, and contact information with a modern UI and smooth user experience." />
@@ -134,16 +134,15 @@ const ResumeProjects = () => {
   const leftSectionRef = useRef(null);
   const rightSectionRef = useRef(null);
 
-  const TimelineCard = ({ title, subtitle, desc, score, index, side }) => {
+  const TimelineCard = ({ title, subtitle, desc, score, index, side,link }) => {
     const isCardVisible = cardsVisible.includes(index);
 
     return (
-      <div 
-        className={`relative pl-12 transition-all duration-700 ease-out ${
-          isCardVisible 
-            ? "opacity-100 translate-x-0" 
-            : `opacity-0 ${side === 'left' ? "-translate-x-[50px]" : "translate-x-[50px]"}`
-        }`}
+      <div
+        className={`relative pl-12 transition-all duration-700 ease-out ${isCardVisible
+          ? "opacity-100 translate-x-0"
+          : `opacity-0 ${side === 'left' ? "-translate-x-[50px]" : "translate-x-[50px]"}`
+          }`}
         style={{
           transitionDelay: `${index * 150}ms`
         }}
@@ -153,7 +152,7 @@ const ResumeProjects = () => {
 
         {/* MAIN INTERACTION GROUP */}
         <div className="group relative mb-10">
-          
+
           {/* Glowing dot on timeline line */}
           <div className="absolute -left-12 top-10 z-30 cursor-pointer">
             <div className="w-5 h-5 rounded-full border-2 border-[#a3e635]/40 bg-[#000000] transition-all duration-300 
@@ -206,6 +205,7 @@ const ResumeProjects = () => {
             <p className="text-sm md:text-base leading-relaxed text-gray-400 transition-colors duration-300 group-hover:text-gray-300">
               {desc}
             </p>
+           
           </div>
         </div>
       </div>
@@ -252,14 +252,14 @@ const ResumeProjects = () => {
     // Replaced white bg and title text with custom brand architecture
     <div className="py-10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Hidden internal heading to let tab system work cleaner */}
         <div className="pb-10 text-center">
           <h2 className="text-xl md:text-2xl font-bold text-[#a3e635] tracking-widest uppercase">
             Development Projects
           </h2>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-4 items-stretch">
           {/* Left Column Projects */}
           <div ref={leftSectionRef} className="flex flex-col">
@@ -269,8 +269,23 @@ const ResumeProjects = () => {
 
           {/* Right Column Projects */}
           <div ref={rightSectionRef} className="flex flex-col">
-            <TimelineCard index={2} side="right" title="E-commerce Website" subtitle="Web Application" score="Project" desc="Built a responsive e-commerce website with product listing, add to cart, and checkout functionality. Focused on performance optimization and user-friendly interface for better shopping experience." />
-            <TimelineCard index={3} side="right" title="Real-time Chat Application" subtitle="Web Application" score="Project" desc="Created a real-time chat application enabling instant messaging between users. Implemented real-time communication features using modern technologies, ensuring fast and smooth user interaction." />
+            <TimelineCard
+              index={2}
+              side="right"
+              title="E-commerce Website"
+              subtitle="Web Application"
+              score="Project"
+              desc="Developed a full MERN E-Commerce website using React.js, Node.js, Express.js, and MongoDB with product listing, add to cart, authentication, payment integration, and checkout functionality. Focused on responsive design, performance optimization, and a user-friendly interface to provide a better shopping experience."
+              link="https://mern-e-comerce-frontent.vercel.app/"
+               />
+            <TimelineCard
+              index={3}
+              side="right"
+              title="Online Course Platform"
+              subtitle="Web Application"
+              score="Project"
+              desc="Developed an online course platform with a modern and fully responsive UI for browsing courses and learning resources. Built using React.js and Tailwind CSS to provide a smooth and engaging user experience."
+            />
           </div>
         </div>
       </div>

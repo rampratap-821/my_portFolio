@@ -143,7 +143,7 @@ import { BiBody } from "react-icons/bi";
 
 const hobbies = [
   { icon: <FaBook className="text-[#e34f26]" />, title: "Learning", desc: "I enjoy learning new technologies and improving my skills by building small projects and exploring new ideas regularly." },
-  { icon: <BiBody className="text-[#06b6d4]" />, title: "Dance", desc: "I enjoy dancing as it keeps me active and energetic. It also helps me express myself and stay confident." },
+  { icon: <BiBody className="text-[#06b6d4]" />, title: "Reading Books", desc: "I enjoy reading books because it helps me learn new things, improve my knowledge, and stay focused. It also inspires creativity and personal growth." },
   { icon: <FaMusic className="text-[#f59e0b]" />, title: "Music", desc: "Listening to music helps me stay relaxed and focused. It keeps me motivated while working or learning." },
 ];
 
@@ -169,10 +169,10 @@ const Hobbies = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-10 w-full overflow-hidden bg-[#050c1a]">
+    <section ref={sectionRef} className="py-10 w-full overflow-hidden bg-[#050c1a] px-10">
       <div>
         <div className="pb-10 text-center">
-          <h2 className="text-xl md:text-2xl font-bold text-[#a3e635] tracking-widest uppercase">
+          <h2 className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase">
             Hobbies & Interests
           </h2>
         </div>

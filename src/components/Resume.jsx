@@ -53,7 +53,7 @@ import ResumeSkills from './ResumeSkills'
 import ResumeProjects from './Projects'
 
 const Resume = () => {
-  const [activeTab, setActiveTab] = useState("Education");
+  const [activeTab, setActiveTab] = useState("Skills");
 
   return (
     <>
@@ -120,8 +120,8 @@ const Resume = () => {
 
         {/* Render Components box */}
         <div className="max-w-7xl mx-auto w-full pb-20">
-          {activeTab === "Education" && <Education />}
           {activeTab === "Skills" && <ResumeSkills />}
+           {activeTab === "Education" && <Education />}
           {activeTab === "Project" && <ResumeProjects />}
         </div>
       </div>

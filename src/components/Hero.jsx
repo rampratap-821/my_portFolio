@@ -292,7 +292,7 @@ const Hero = () => {
 
             {/* हेडिंग */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide mb-5">
-              Welcome to my profil
+              Welcome to my profile
             </h1>
 
             {/* टाइपिंग इफ़ेक्ट */}
@@ -303,8 +303,9 @@ const Hero = () => {
             </div>
 
             <p className="text-gray-400 mt-5 text-sm md:text-base leading-relaxed max-w-md mx-auto">
-              Programming is my passion. I enjoy creating meaningful solutions, 
-              collaboring with teams, and delivering quality work on time.
+            Programming is my passion. I enjoy developing modern and user-friendly web solutions. 
+            I believe in working effectively with teams and delivering high-quality projects on time. 
+            Learning new technologies and continuously improving my skills is one of my top priorities.
             </p>
           </div>
 
@@ -349,7 +350,7 @@ const Hero = () => {
             <div className="absolute inset-[-8px] rounded-full bg-gradient-to-bl from-blue-500 via-pink-500/20 to-cyan-400 opacity-50 animate-pulse-gentle -z-10"></div>
             
             {/* 3. आपकी प्रोफाइल इमेज */}
-            <div className="w-[88%] h-[88%] rounded-full overflow-hidden border-[6px] border-[#050c1a] bg-[#101f38] z-10 shadow-2xl">
+            <div className="w-[88%] h-[88%] rounded-full overflow-hidden border-[6px] border-[#050c1a] z z-10 shadow-2xl">
               <img
                 src="https://scontent.fdel65-3.fna.fbcdn.net/v/t39.30808-6/467468453_122127745556427436_9180433924243760972_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=NpdqKw7_mKMQ7kNvwFBIoNQ&_nc_oc=AdqeS2mkApbkt2IGkYNLWBfwoh6YfbVOruG5CyXKxl4_Q-WGnls9_IZP6OVHwaSIWI7UFG5saH31Ie4lpnVlmvs8&_nc_zt=23&_nc_ht=scontent.fdel65-3.fna&_nc_gid=JhgaHdOW2V846kD_ge6GTA&_nc_ss=7b2a8&oh=00_Af7-uCLCPcFvnQNN8pe3Ob-4kq4DQwFZnzGKPsikv2MUPA&oe=6A102BFB"
                 alt="Rampratap"

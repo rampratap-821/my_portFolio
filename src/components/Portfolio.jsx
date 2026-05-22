@@ -166,17 +166,17 @@ import React, { useState, useEffect, useRef } from "react";
 
 const projects = [
   {
-    img: "https://images.pexels.com/photos/7514862/pexels-photo-7514862.jpeg",
+    img: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800",
     category: "PROJECT",
-    title: "Cosmetic Website",
-    desc: "Built a responsive cosmetic website using HTML, CSS and JavaScript with clean UI and smooth user experience.",
+    title: "Job Portal",
+    desc: "Developed using React.js and Tailwind CSS with fully responsive job listing UI, search/filter functionality, and modern frontend design.",
   },
   {
-    img: "https://eduma.thimpress.com/wp-content/uploads/2022/06/courses-1-370x230.jpg",
+    img: "https://media.istockphoto.com/id/1249219777/photo/shopping-online-concept-parcel-or-paper-cartons-with-a-shopping-cart-logo-in-a-trolley-on-a.jpg?s=612x612&w=0&k=20&c=EWKEahyVLY8iAHyirCCDESHRGW37lqUJ7In0SssNSLE=",
     category: "PROJECT",
-    title: "Online Courses",
-    desc: "Developed using React.js and Tailwind CSS with fully responsive course listing UI.",
-    link: "https://ram-online-education.vercel.app",
+    title: "MERN E-Commerce",
+    desc: "Built using React.js, Node.js, Express.js, and MongoDB with payment integration, cart system, authentication, and fully responsive UI.",
+    link: "https://mern-e-comerce-frontent.vercel.app/",
   },
   {
     img: "https://images.unsplash.com/photo-1690369519543-c81a2121f740?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fHVpJTIwZGVzaWdufGVufDB8fDB8fHww",
@@ -238,7 +238,7 @@ const Portfolio = () => {
     // Section background matching your portfolio dark theme
     <section ref={sectionRef} className="py-20 md:px-10 px-5 overflow-hidden bg-[#050c1a]">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Heading */}
         <div
           className="transform transition-all duration-700 ease-out mb-14 text-center md:text-left"
@@ -267,7 +267,7 @@ const Portfolio = () => {
                 backgroundColor: "#000000",
                 border: "2px solid #a3e635",
                 boxShadow: "0 0 15px rgba(163, 230, 53, 0.3)",
-                
+
                 // Entrance animation physics
                 opacity: visibleItems.includes(index) ? 1 : 0,
                 transform: visibleItems.includes(index) ? "translateY(0)" : "translateY(50px)",
@@ -284,7 +284,7 @@ const Portfolio = () => {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              
+
               {/* Image Container */}
               <div className="overflow-hidden rounded-xl mb-5 relative aspect-[4/3] w-full">
                 <img
@@ -298,7 +298,7 @@ const Portfolio = () => {
 
               {/* Content Box */}
               <div className="flex flex-col flex-grow text-left">
-                
+
                 {/* Category */}
                 <p className="text-orange-500 text-xs uppercase mb-2 font-bold tracking-wider">
                   {item.category}

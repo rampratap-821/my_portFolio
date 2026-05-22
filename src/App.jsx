@@ -4,9 +4,9 @@ import DemoButton from './components/DemoButton'
 
 const App = () => {
   return (
-    <div className='bg-white/10' >
+    <div className='' >
       <AllComponent/>
-      <DemoButton/>
+      {/* <DemoButton/> */}
     </div>
   )
 }
