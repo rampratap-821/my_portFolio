@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ProfileImage from "../assets/image.png"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -7,11 +8,11 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        
+   
         {/* Left Logo */}
         <div className="flex items-center gap-2">
           <img
-            src="https://scontent.fbek1-5.fna.fbcdn.net/v/t39.30808-6/467468453_122127745556427436_9180433924243760972_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=53a332&_nc_ohc=Z-0-O2_TnUsQ7kNvwGT5L9f&_nc_oc=AdrH1Lvhi51K2gLJ0N6JV0RB_Abuc07BSzJ4KhP8pQ-hM5DFPFaSjVTJ-KqZP1LoKyrtMj9ApPxl_GzSuBmg_iWc&_nc_zt=23&_nc_ht=scontent.fbek1-5.fna&_nc_gid=_3cjrojI3pk6HcfSsNMtYQ&_nc_ss=7a32e&oh=00_AfxgYr6TnvVFqVtOHTq1zhagOwaCe24Vuh_0Lhhlzkm8QQ&oe=69CB9DFB"
+            src={ProfileImage}
             alt="logo"
             className="w-8 h-8 rounded-full object-cover"
           />

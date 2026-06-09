@@ -299,6 +299,7 @@ import Blog from "../components/Blog";
 import React, { useState, useRef, useEffect } from "react";
 import { FaBars, FaTimes, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import pdf from "../../public/Rampratap_Resume.pdf"
+import ProfileImage from "../assets/image.png"
 
 const AllComponent = () => {
   const [open, setOpen] = useState(false);
@@ -360,7 +361,7 @@ const AllComponent = () => {
             onClick={() => scrollToSection(heroRef)}
           >
             <img
-              src="https://scontent.fdel65-3.fna.fbcdn.net/v/t39.30808-6/467468453_122127745556427436_9180433924243760972_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=NpdqKw7_mKMQ7kNvwFBIoNQ&_nc_oc=AdqeS2mkApbkt2IGkYNLWBfwoh6YfbVOruG5CyXKxl4_Q-WGnls9_IZP6OVHwaSIWI7UFG5saH31Ie4lpnVlmvs8&_nc_zt=23&_nc_ht=scontent.fdel65-3.fna&_nc_gid=JhgaHdOW2V846kD_ge6GTA&_nc_ss=7b2a8&oh=00_Af7-uCLCPcFvnQNN8pe3Ob-4kq4DQwFZnzGKPsikv2MUPA&oe=6A102BFB"
+              src={ProfileImage}
               alt="logo"
               className="w-9 h-9 rounded-full object-cover ring-2 ring-orange-500/30"
             />
@@ -403,7 +404,7 @@ const AllComponent = () => {
           <div className="flex justify-between items-center p-6 border-b border-gray-800">
             <div className="flex items-center gap-2" onClick={() => scrollToSection(heroRef)}>
               <img
-                src="https://scontent.fdel65-3.fna.fbcdn.net/v/t39.30808-6/467468453_122127745556427436_9180433924243760972_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=NpdqKw7_mKMQ7kNvwFBIoNQ&_nc_oc=AdqeS2mkApbkt2IGkYNLWBfwoh6YfbVOruG5CyXKxl4_Q-WGnls9_IZP6OVHwaSIWI7UFG5saH31Ie4lpnVlmvs8&_nc_zt=23&_nc_ht=scontent.fdel65-3.fna&_nc_gid=JhgaHdOW2V846kD_ge6GTA&_nc_ss=7b2a8&oh=00_Af7-uCLCPcFvnQNN8pe3Ob-4kq4DQwFZnzGKPsikv2MUPA&oe=6A102BFB"
+                src={ProfileImage}
                 alt="logo"
                 className="w-8 h-8 rounded-full object-cover"
               />

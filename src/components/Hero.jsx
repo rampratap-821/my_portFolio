@@ -197,6 +197,7 @@
 
 // export default Hero;
 import React, { useState, useEffect } from "react";
+import ProfileImage from "../assets/image.png"
 import {
   FaCss3Alt,
   FaFacebookF,
@@ -352,9 +353,9 @@ const Hero = () => {
             {/* 3. आपकी प्रोफाइल इमेज */}
             <div className="w-[88%] h-[88%] rounded-full overflow-hidden border-[6px] border-[#050c1a] z z-10 shadow-2xl">
               <img
-                src="https://scontent.fdel65-3.fna.fbcdn.net/v/t39.30808-6/467468453_122127745556427436_9180433924243760972_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=NpdqKw7_mKMQ7kNvwFBIoNQ&_nc_oc=AdqeS2mkApbkt2IGkYNLWBfwoh6YfbVOruG5CyXKxl4_Q-WGnls9_IZP6OVHwaSIWI7UFG5saH31Ie4lpnVlmvs8&_nc_zt=23&_nc_ht=scontent.fdel65-3.fna&_nc_gid=JhgaHdOW2V846kD_ge6GTA&_nc_ss=7b2a8&oh=00_Af7-uCLCPcFvnQNN8pe3Ob-4kq4DQwFZnzGKPsikv2MUPA&oe=6A102BFB"
+                src={ProfileImage}
                 alt="Rampratap"
-                className="w-full h-full object-cover transform scale-105 hover:scale-110 transition-transform duration-500"
+                className="w-full h-[97%] object-cover transform scale-105 hover:scale-110 transition-transform duration-500"
               />
             </div>
 
