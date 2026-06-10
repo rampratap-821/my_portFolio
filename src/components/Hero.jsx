@@ -197,7 +197,7 @@
 
 // export default Hero;
 import React, { useState, useEffect } from "react";
-import ProfileImage from "../assets/image.png"
+import ProfileImage from "../assets/image.png";
 import {
   FaCss3Alt,
   FaFacebookF,
@@ -205,7 +205,6 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 import { TbBrandJavascript } from "react-icons/tb";
-import profile from "../assets/image.png";
 
 const Hero = () => {
   // Typing animation states
@@ -258,115 +257,134 @@ const Hero = () => {
   const socialLinks = {
     facebook: "https://www.facebook.com/ram.pratap.495594",
     instagram: "https://www.instagram.com/ramp.ratap8218/",
-    linkedin: "https://www.linkedin.com/in/ram-pratap-477346320/"
+    linkedin: "https://www.linkedin.com/in/ram-pratap-477346320/",
   };
 
   const handleSocialClick = (platform) => {
-    window.open(socialLinks[platform], '_blank', 'noopener,noreferrer');
+    window.open(socialLinks[platform], "_blank", "noopener,noreferrer");
   };
 
   return (
-    // min-h-screen, flex, items-center, aur justify-center से सब कुछ स्क्रीन के सेंटर में रहेगा
-    <section className="w-full min-h-screen flex items-center justify-center bg-[#050c1a] text-white font-sans overflow-hidden py-12 lg:py-0">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center justify-items-center w-full">
+    <section className="w-full min-h-screen flex items-center justify-center bg-[#050c1a] text-white font-sans py-8 sm:py-12 lg:py-0">
+      {/* Global responsive container */}
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-8 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center justify-items-center">
         
-        {/* LEFT CONTENT - UPDATE: Image ke jaisa Glowing Neon Border lagaya hai */}
+        {/* LEFT CONTENT */}
         <div className="lg:col-span-7 flex flex-col justify-center items-center w-full order-2 lg:order-1">
           <div
-            className={`w-full max-w-xl bg-[#0b1426] rounded-2xl p-8 md:p-12 text-center transition-all duration-1000 ease-out transform ${
-              leftContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            className={`w-full max-w-md md:max-w-xl bg-[#0b1426] rounded-2xl p-6 sm:p-8 md:p-10 text-center transition-all duration-1000 ease-out transform ${
+              leftContentVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
             style={{
-              // Image ke matching Greenish-Yellow custom neon border aur glow effects
               border: "2px solid #a3e635",
               boxShadow: "0 0 20px rgba(163, 230, 53, 0.4), inset 0 0 15px rgba(163, 230, 53, 0.1)",
-              animation: "pulseGlow 3s infinite ease-in-out"
+              animation: "pulseGlow 3s infinite ease-in-out",
             }}
           >
-            {/* CSS Animation Logic for Glowing Effect */}
-            <style>{`
-              @keyframes pulseGlow {
-                0%, 100% { box-shadow: 0 0 15px rgba(163, 230, 53, 0.35), inset 0 0 10px rgba(163, 230, 53, 0.05); }
-                50% { box-shadow: 0 0 30px rgba(163, 230, 53, 0.65), inset 0 0 20px rgba(163, 230, 53, 0.15); }
-              }
-            `}</style>
+            {/* CSS animations */}
+            <style>
+              {`
+                @keyframes pulseGlow {
+                  0%, 100% { box-shadow: 0 0 15px rgba(163, 230, 53, 0.35), inset 0 0 10px rgba(163, 230, 53, 0.05); }
+                  50% { box-shadow: 0 0 30px rgba(163, 230, 53, 0.65), inset 0 0 20px rgba(163, 230, 53, 0.15); }
+                }
+                @keyframes spin-slow {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(360deg); }
+                }
+                @keyframes pulse-gentle {
+                  0%, 100% { opacity: 0.4; }
+                  50% { opacity: 0.8; }
+                }
+                .animate-spin-slow {
+                  animation: spin-slow 8s linear infinite;
+                }
+                .animate-pulse-gentle {
+                  animation: pulse-gentle 3s ease-in-out infinite;
+                }
+              `}
+            </style>
 
-            {/* हेडिंग */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-wide mb-5">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-wide mb-4 sm:mb-5">
               Welcome to my profile
             </h1>
 
-            {/* टाइपिंग इफ़ेक्ट */}
-            <div className="flex justify-center items-center text-lg md:text-xl font-medium text-gray-300 mt-2 flex-wrap">
+            <div className="flex justify-center items-center text-sm sm:text-base md:text-lg font-medium text-gray-300 mt-2 flex-wrap">
               <span>Hi, I'm Rampratap, a </span>
-              <span className="text-[#ff4522] font-semibold pl-2">{displayText}</span>
+              <span className="text-[#ff4522] font-semibold pl-2 break-words">{displayText}</span>
               <span className="inline-block w-[2px] h-[1em] bg-[#ff4522] ml-1 animate-pulse"></span>
             </div>
 
             <p className="text-gray-400 mt-5 text-sm md:text-base leading-relaxed max-w-md mx-auto">
-            Programming is my passion. I enjoy developing modern and user-friendly web solutions. 
-            I believe in working effectively with teams and delivering high-quality projects on time. 
-            Learning new technologies and continuously improving my skills is one of my top priorities.
+              Programming is my passion. I enjoy developing modern and user-friendly web solutions.
+              I believe in working effectively with teams and delivering high-quality projects on time.
+              Learning new technologies and continuously improving my skills is one of my top priorities.
             </p>
           </div>
 
-          {/* सोशल मीडिया और स्किल्स */}
-          <div className="flex flex-wrap justify-center gap-10 mt-8 w-full px-4">
+          {/* Social & Skills */}
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mt-8 w-full px-4">
             <div className="flex flex-col items-center">
               <p className="text-[11px] font-bold text-gray-500 mb-2 uppercase tracking-wider">FIND WITH ME</p>
               <div className="flex gap-3">
-                <SocialBox onClick={() => handleSocialClick('facebook')}><FaFacebookF /></SocialBox>
-                <SocialBox onClick={() => handleSocialClick('instagram')}><FaInstagram /></SocialBox>
-                <SocialBox onClick={() => handleSocialClick('linkedin')}><FaLinkedinIn /></SocialBox>
+                <SocialBox onClick={() => handleSocialClick("facebook")}><FaFacebookF /></SocialBox>
+                <SocialBox onClick={() => handleSocialClick("instagram")}><FaInstagram /></SocialBox>
+                <SocialBox onClick={() => handleSocialClick("linkedin")}><FaLinkedinIn /></SocialBox>
               </div>
             </div>
 
             <div className="flex flex-col items-center">
               <p className="text-[11px] font-bold text-gray-500 mb-2 uppercase tracking-wider">BEST SKILL ON</p>
               <div className="flex gap-3">
-                <SkillBox color={"#38bdf8"}><FaCss3Alt /></SkillBox>
-                <SkillBox color={"#f59e0b"}><TbBrandJavascript /></SkillBox>
-                <SkillBox color={"#06b6d4"}>
-                  <img src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon.png" className="w-5 h-5 object-contain" alt="React" />
+                <SkillBox color="#38bdf8"><FaCss3Alt /></SkillBox>
+                <SkillBox color="#f59e0b"><TbBrandJavascript /></SkillBox>
+                <SkillBox color="#06b6d4">
+                  <img
+                    src="https://w7.pngwing.com/pngs/79/518/png-transparent-js-react-js-logo-react-react-native-logos-icon.png"
+                    className="w-5 h-5 object-contain"
+                    alt="React"
+                  />
                 </SkillBox>
               </div>
             </div>
           </div>
         </div>
 
-        {/* RIGHT IMAGE - मैजिकल मूविंग लाइट रिंग */}
+        {/* RIGHT CONTENT – Moving light ring + responsive image */}
         <div className="lg:col-span-5 flex justify-center items-center w-full order-1 lg:order-2">
           <div
-            className={`relative w-72 h-72 sm:w-80 sm:h-80 md:w-85 md:h-85 lg:w-96 lg:h-96 rounded-full flex items-center justify-center transition-all duration-1000 ease-out transform ${
-              rightContentVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            className={`relative flex items-center justify-center transition-all duration-1000 ease-out transform ${
+              rightContentVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
+            style={{ width: "auto", height: "auto" }}
           >
-            
-            {/* 1. इमेज जैसी मल्टीकलर लाइट रिंग जो लगातार घूमेगी (Gradient Edge) */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400 via-purple-600 to-pink-500 opacity-90 blur-[2px] animate-spin-slow p-[5px]">
-              <div className="w-full h-full bg-[#050c1a] rounded-full"></div>
-            </div>
+            {/* Responsive image container – scales smoothly */}
+            <div className="relative w-56 h-56 min-[400px]:w-64 min-[400px]:h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full">
+              {/* Rotating multicolor ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-cyan-400 via-purple-600 to-pink-500 opacity-90 blur-[2px] animate-spin-slow p-[5px]">
+                <div className="w-full h-full bg-[#050c1a] rounded-full"></div>
+              </div>
 
-            {/* 2. पीछे का एक्स्ट्रा नियॉन और मैजिकल ग्लो जो पल्स करेगा (सिकुड़ेगा-फैलेगा) */}
-            <div className="absolute inset-[-8px] rounded-full bg-gradient-to-bl from-blue-500 via-pink-500/20 to-cyan-400 opacity-50 animate-pulse-gentle -z-10"></div>
-            
-            {/* 3. आपकी प्रोफाइल इमेज */}
-            <div className="w-[88%] h-[88%] rounded-full overflow-hidden border-[6px] border-[#050c1a] z z-10 shadow-2xl">
-              <img
-                src={ProfileImage}
-                alt="Rampratap"
-                className="w-full h-[97%] object-cover transform scale-105 hover:scale-110 transition-transform duration-500"
-              />
-            </div>
+              {/* Gentle pulsing glow */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-bl from-blue-500 via-pink-500/20 to-cyan-400 opacity-50 animate-pulse-gentle -z-10"></div>
 
+              {/* Image wrapper */}
+              <div className="w-[88%] h-[88%] rounded-full overflow-hidden border-[6px] border-[#050c1a] z-10 shadow-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <img
+                  src={ProfileImage}
+                  alt="Rampratap"
+                  className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </section>
   );
 };
 
+// Helper components
 const SocialBox = ({ children, onClick }) => (
   <div
     onClick={onClick}
